@@ -47,11 +47,9 @@ Open `http://localhost:8000/web-studio/`.
 
 ## Publish on GitHub Pages (free)
 
-1. Create a **new public repository** called `web-studio` under `Github505050`—do **not** overwrite any existing repository.
-2. Upload the **contents** of this folder to its `main` branch, preserving the structure; do not upload only the ZIP file.
-3. Open `Settings → Pages → Build and deployment → Deploy from a branch → main → /(root) → Save`.
-4. Once Pages has finished deploying, open `https://github505050.github.io/web-studio/`.
-5. Verify the demo routes, signature images, clipboard action on HTTPS, responsive preview, chatbot, and mobile navigation on the public URL.
+The source is already committed to [`Github505050/web-studio`](https://github.com/Github505050/web-studio) on `main`. The only remaining publishing step is to enable GitHub Pages in **Settings → Pages → Build and deployment → Deploy from a branch → main → /(root) → Save**.
+
+After GitHub shows a successful Pages deployment, verify https://github505050.github.io/web-studio/ and test live demos, assets, mobile navigation and exported signature images. Source upload does not by itself prove that the public site has been enabled.
 
 ## Quality checks
 

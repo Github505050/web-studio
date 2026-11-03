@@ -1,18 +1,19 @@
-# Deployment — One new repo, no existing projects touched
+# GitHub Pages deployment
 
-The current connected GitHub app cannot create repositories. To allow ChatGPT to publish this code through the connected GitHub tool, create a **new** repository in the browser:
+Repository: https://github.com/Github505050/web-studio
 
-1. Open <https://github.com/new> while signed in as `Github505050`.
-2. Repository name: **web-studio**.
-3. Choose **Public**.
-4. Select **Add a README** so the repository has an initialized `main` branch.
-5. Click **Create repository**.
-6. Return to the chat and say **"Created web-studio. Upload the website."**
+**Source upload completed on November 3, 2026.** All 37 files were committed to the public `main` branch and the repository tree was checked. The existing Portfolio, french-classroom and northline-support repositories were not modified.
 
-The GitHub connector can then write to the new repository without changing `Portfolio`, `french-classroom` or `northline-support`.
+## Enable Pages (one account-owner step)
 
-Alternatively, extract the provided ZIP locally, upload its **contents** to the new repository, and enable Pages:
+1. Open https://github.com/Github505050/web-studio/settings/pages
+2. Under **Build and deployment**, set **Source** to **Deploy from a branch**.
+3. Select branch **main** and folder **/(root)**.
+4. Click **Save**.
+5. Watch the GitHub Pages deployment status, then visit https://github505050.github.io/web-studio/.
 
-**Settings → Pages → Deploy from a branch → main → /(root) → Save**.
+The connected GitHub tools can commit files, but cannot change repository Pages settings. The public address is an expected URL, not a verified active deployment until this account setting is enabled and the site responds.
 
-Expected published URL after a successful deployment: `https://github505050.github.io/web-studio/`. This URL is an expected path, **not** a confirmed live site until GitHub Pages reports a completed deployment.
+## Verify after publishing
+
+Check home, four service pages, live demo gallery, three landing page demos, FAQ chat, frontend repair controls, generated HTML signatures and hosted images, mobile layout, keyboard operation, and links to independent projects. Send sample signatures to actual Gmail/Outlook/mobile clients before claiming verified cross-client support.

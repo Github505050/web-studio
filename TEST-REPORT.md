@@ -25,7 +25,7 @@ Date: November 3, 2026
 ## Boundaries
 
 - The Chromium environment blocks navigation to local HTTP or file URLs. Pages were loaded into isolated browser documents with their own CSS and scripts injected. Consequently the tests **do not** prove that GitHub Pages routes, iframe navigation, remote project screenshot loading, email-client rendering or external links work on the live internet.
-- GitHub connection can read/edit accessible repositories but cannot create a new repository. `Github505050/web-studio` did not exist at audit time, so no changes have been pushed and no live deployment exists yet.
+- GitHub repository source upload was completed on November 3, 2026. All 37 expected files are present on the `main` branch; a recursive Git tree check confirmed their Git blob SHA values match the local files. GitHub Pages settings still need to be enabled by the account owner; no live Pages deployment has been confirmed.
 - The signature generator uses the future GitHub Pages URL for public images; those images will need deployment before image-based export can display in email clients.
 - The FAQ assistant is deliberately deterministic, not a generative language model.
 - No paid APIs, fake testimonials, real customer records, fake client metrics or pricing packages were added.
@@ -33,8 +33,8 @@ Date: November 3, 2026
 
 ## Release checklist after repository creation
 
-1. Upload all files into a new public `web-studio` repository with the root `index.html` intact.
-2. Enable GitHub Pages from `main` at root folder.
+1. Completed: all 37 source files uploaded into the public `web-studio` repository with root `index.html` intact.
+2. Remaining: enable GitHub Pages from `main` at root folder.
 3. Verify actual public URLs: home, service pages, demo pages and 404 behavior.
 4. Inspect iframe demos, real project preview images and exported signature hosted images on the public site.
 5. Send an actual test signature to Gmail, Outlook and a mobile email client before claiming those apps' compatibility.
