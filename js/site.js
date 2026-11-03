@@ -39,6 +39,13 @@
     });
   }
 
+  // Project screenshots fall back to an explicitly illustrated card when external images are blocked.
+  document.querySelectorAll('.studio-case-visual img, .studio-feature-image > img').forEach(image => {
+    const markMissing = () => image.classList.add('studio-image-missing');
+    if (image.complete && image.naturalWidth === 0) markMissing();
+    image.addEventListener('error', markMissing);
+  });
+
   // FAQ accordions
   $$('.faq-item button').forEach(button => {
     button.addEventListener('click', () => {
@@ -51,7 +58,7 @@
 
   // Selected work filters
   const filters = $$('[data-filter]');
-  if (filters.length) {
+  if (filters.length && !document.querySelector('.studio-demo-page')) {
     filters.forEach(button => {
       button.addEventListener('click', () => {
         filters.forEach(item => item.setAttribute('aria-pressed', 'false'));

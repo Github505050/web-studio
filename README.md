@@ -47,9 +47,11 @@ Open `http://localhost:8000/web-studio/`.
 
 ## Publish on GitHub Pages (free)
 
-The source is already committed to [`Github505050/web-studio`](https://github.com/Github505050/web-studio) on `main`. The only remaining publishing step is to enable GitHub Pages in **Settings → Pages → Build and deployment → Deploy from a branch → main → /(root) → Save**.
-
-After GitHub shows a successful Pages deployment, verify https://github505050.github.io/web-studio/ and test live demos, assets, mobile navigation and exported signature images. Source upload does not by itself prove that the public site has been enabled.
+1. Create a **new public repository** called `web-studio` under `Github505050`—do **not** overwrite any existing repository.
+2. Upload the **contents** of this folder to its `main` branch, preserving the structure; do not upload only the ZIP file.
+3. Open `Settings → Pages → Build and deployment → Deploy from a branch → main → /(root) → Save`.
+4. Once Pages has finished deploying, open `https://github505050.github.io/web-studio/`.
+5. Verify the demo routes, signature images, clipboard action on HTTPS, responsive preview, chatbot, and mobile navigation on the public URL.
 
 ## Quality checks
 
@@ -68,3 +70,20 @@ After GitHub shows a successful Pages deployment, verify https://github505050.gi
 ## Attribution and ethical presentation
 
 Sample businesses (Northstar, Solace, OrbitFlow, Morrow, Alder, Brightpath) and sample signature identities are fictional. Screenshots for the three original landing-page demos were captured locally from the actual HTML/CSS in isolated Chromium. Selected-work screenshots are referenced from existing public repository files on GitHub, not invented project visuals. Descriptions of the external French Classroom, Northline and personal portfolio projects are based on their public repository READMEs. All initial professional inquiries related to Upwork projects should remain on Upwork before a contract begins.
+
+## November 3, 2026 — cohesive studio showcase refresh
+
+The public studio uses a calm slate / teal / warm-white system in `css/refinement.css`, layered over the original shared CSS. The refined layout covers the homepage, About, FAQ, Landing Pages, Bug Fixes, Selected Work, Live Demos, Chatbots and Email Signatures. The three separate fictional landing-page designs intentionally retain their distinct visual identities.
+
+### Updated pages
+- **Selected Work:** honest independent-project evidence with working external links and explicit limitations. Project imagery is sourced from public project repositories; if external images are unavailable, CSS illustrates a fallback and the source project links remain accessible. These are not paid-client case studies.
+- **Live Demos:** six-category-aware demo cards with filters, selectable iframe preview, desktop/tablet/mobile frame controls, and real page links. The phone link opens full pages rather than requiring interaction through a narrow embedded iframe.
+- **Chatbots:** three switchable structured FAQ knowledge bases, suggested prompts, unknown-question fallback, conversation reset, browser-only history and clear notice that the demonstration is deterministic, not a generative AI model.
+- **Email Signatures:** three editable table-based templates, example contact details, selectable muted accent colours, editable HTTPS website link, email/phone hyperlinks, clipboard copy, source reveal, and HTML download. Generated sample artwork URLs refer to this public site's fictional images. Always test generated markup in actual email clients before real business use.
+
+### How to test
+`python tests/site_audit.py` checks syntax, links and metadata.
+`python tests/bug_fixes_interactions.py` checks the repair lab.
+`python tests/browser_smoke.py` runs a lightweight mobile sanity check. Run `python tests/studio_qa.py` and `python tests/demo_qa.py` separately for the complete isolated-browser interaction checks. Direct local and external network navigation is unavailable in the test environment, so images fetched from public repositories and GitHub Pages delivery must be checked on the deployed website separately.
+
+`build.py` and `make_demos.py` are older generators: running them may overwrite the manually refined HTML. Review generated diffs and retain the November 2026 enhancements before rebuilding any page.
