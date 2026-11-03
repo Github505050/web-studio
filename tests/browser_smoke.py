@@ -16,6 +16,7 @@ with sync_playwright() as playwright:
   page.set_content(html,wait_until='domcontentloaded')
   page.add_style_tag(content=(ROOT/'css/site.css').read_text())
   page.add_style_tag(content=(ROOT/'css/refinement.css').read_text())
+  if route=='selected-work/':page.add_style_tag(content=(ROOT/'css/selected-work.css').read_text())
   if page.evaluate('document.documentElement.scrollWidth > innerWidth+1'):issues.append(route+' overflow')
   if page.locator('main').count()!=1:issues.append(route+' missing main')
   page.close()

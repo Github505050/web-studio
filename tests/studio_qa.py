@@ -26,6 +26,7 @@ def load(page,route):
   if extra:page.add_style_tag(content=(root/extra).read_text())
  else:
   page.add_style_tag(content=(root/'css/refinement.css').read_text())
+  if route=='selected-work/':page.add_style_tag(content=(root/'css/selected-work.css').read_text())
  scripts= (['js/sample-pages.js'] if demo else ['js/site.js']+(['js/showcase.js'] if route=='live-demos/' else [])+(['js/chatbot.js'] if route=='services/chatbots/' else [])+(['js/signature.js'] if route=='services/email-signatures/' else []))
  if demo:
   scripts += [('js/northstar.js' if name=='consulting' else 'js/solace.js') ] if name in ['consulting','wellness'] else []
@@ -39,6 +40,7 @@ with sync_playwright() as p:
  for width in WIDTHS:
   for route in ROUTES:
    page=browser.new_page(viewport={'width':width,'height':880},device_scale_factor=1)
+   page.route('**/*', lambda route: route.abort())
    page.on('pageerror', lambda e,w=width:issues.append('JS '+str(w)+' '+str(e)))
    load(page,route)
    page.wait_for_timeout(80)
@@ -57,6 +59,7 @@ with sync_playwright() as p:
    except Exception as e:issues.append(f'{width} {route} '+str(e))
    page.close()
  page=browser.new_page(viewport={'width':1440,'height':900},accept_downloads=True)
+ page.route('**/*', lambda route: route.abort())
  page.on('pageerror',lambda e:issues.append('flow JS '+str(e)))
  load(page,'live-demos/')
  page.locator('[data-filter="chat"]').click()
@@ -123,6 +126,7 @@ with sync_playwright() as p:
  # real mobile navigation and minimum touch targets for key actions
  for width in (320,390):
   page=browser.new_page(viewport={'width':width,'height':844})
+  page.route('**/*', lambda route: route.abort())
   for route in ['selected-work/','live-demos/','services/chatbots/','services/email-signatures/']:
    load(page,route)
    page.locator('[data-nav-toggle]').click()

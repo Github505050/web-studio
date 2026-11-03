@@ -40,7 +40,7 @@
   }
 
   // Project screenshots fall back to an explicitly illustrated card when external images are blocked.
-  document.querySelectorAll('.studio-case-visual img, .studio-feature-image > img').forEach(image => {
+  document.querySelectorAll('img[data-studio-shot]').forEach(image => {
     const markMissing = () => image.classList.add('studio-image-missing');
     if (image.complete && image.naturalWidth === 0) markMissing();
     image.addEventListener('error', markMissing);
